@@ -23,6 +23,13 @@ class SearchesController < ApplicationController
         end
     end
 
+    def update
+        search = Search.find(params[:id])
+        search.update(search_params)
+
+        render json: {search: search, message: "Updated search"}
+    end
+
     def destroy
         search = Search.find(params[:id])
         search.destroy
