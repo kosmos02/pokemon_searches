@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
-  resources :pokemon, only: :index
+  resources :users, only: [:index, :create]
+  resources :pokemon, only: [:index, :show]
   resources :searches
 
-  get "/pokemon/:id", to: 'pokemon#show'
+
   post "/login", to: "users#login"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

@@ -1,5 +1,6 @@
 class Search < ApplicationRecord
     validates :name, uniqueness: true
+    paginates_per 5
 
     def self.sort_by_name
         order(:name)

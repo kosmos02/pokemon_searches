@@ -5,16 +5,15 @@ class PokemonController < ApplicationController
         result= JSON.parse(response.body)
 
         render json: result
-
     end
 
-    def show
-        @params = params[:id]
-        response = Faraday.get("https://pokeapi.co/api/v2/pokemon?limit=1118&name=#{@params}")
-        result= JSON.parse(response.body)
+    # def show
+    #     @params = params[:id]
+    #     response = Faraday.get("https://pokeapi.co/api/v2/pokemon/#{@params}")
+    #     result= JSON.parse(response.body)
 
-        render result
-    end
+    #     render result
+    # end
 
     # private
 

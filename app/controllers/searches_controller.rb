@@ -1,40 +1,40 @@
 class SearchesController < ApplicationController
 
     def index
-        searches = Search.all
-
-        render json: searches
+        @searches = Search.page(params[:page]).per(params[:limit])
+        
+        render json: @searches
     end
 
     def show
-        search = Search.find(params[:id])
+        @search = Search.find(params[:id])
 
-        render json: search   
+        render json: @search   
     end
 
     def create
-        search = Search.new(search_params)
+        @search = Search.new(search_params)
 
-        if search.valid?
-            search.save
-            render json: {search: search, messages: "Created"}, status: :created
+        if @search.valid?
+            @search.save
+            render json: {search: @search, messages: "Created"}, status: :created
         else 
-            render json: {errors: search.errors.full_messages[0]}, status: :unprocessable_entity
+            render json: {errors: @search.errors.full_messages[0]}, status: :unprocessable_entity
         end
     end
 
     def update
-        search = Search.find(params[:id])
-        search.update(search_params)
+        @search = Search.find(params[:id])
+        @search.update(search_params)
 
-        render json: {search: search, message: "Updated search"}
+        render json: {search: @search, message: "Updated search"}
     end
 
     def destroy
-        search = Search.find(params[:id])
-        search.destroy
+        @search = Search.find(params[:id])
+        @search.destroy
 
-        render json: {search: search, message: "Deleted"}
+        render json: {search: @search, message: "Deleted"}
     end
 
     private
