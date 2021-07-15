@@ -7,7 +7,7 @@ class Search < ApplicationRecord
     end
 
     def self.filter_by_name name
-        select{|pokemon| pokemon.name == name}
+        select{ |pokemon| pokemon.name == name}
     end
 
 end
