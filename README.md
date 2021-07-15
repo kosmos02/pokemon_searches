@@ -6,7 +6,7 @@ This API uses a third party API from https://pokeapi.co/ to fetch all the pokemo
 
 There is testing available for the user and searches models.
 
-The easiest way for the user to interact with the app is with Postman. Although, you can search with GET requests through the deployed app on Heroku.
+The easiest way for the user to interact with the app is with Postman. Although, you can search with GET requests through the deployed app on Heroku at https://desolate-escarpment-31233.herokuapp.com
 
 To run locally run your rails server and use "http://localhost:3000" and use the endpoints mentioned below
 
@@ -82,4 +82,8 @@ Make a POST request to the enpoint /login with headers with the key "Content-Typ
 You can sort the searches database by name in ascending order by using 'rails c' to get into your console locally. Use Search.sort_by_name to sort the searches.
 
 To filter and get a specific pokemon by name you can type in Search.filter_by_name("name_of_pokemon")
+
+### Tests ### 
+
+If you would like to run the tests I created locally run the command 'rspec' in the command line to run all the tests.
 
