@@ -10,5 +10,4 @@ class Search < ApplicationRecord
         select{|pokemon| pokemon.name == name}
     end
 
-
 end

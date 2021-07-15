@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     def index
         @users = User.all
 
-        render json: @usersß
+        render json: @users
     end
     
     def create
